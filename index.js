@@ -59,7 +59,7 @@ Header.prototype.parseFieldSubRecord = function(buffer) {
 Header.prototype.convertBinaryToInteger = function(buffer) {
     const fillerBytesCount = 4 - buffer.length;
     const fillerBytes = Buffer.alloc(fillerBytesCount, 0);
-    const filledBuffer = Buffer.concat([buffer, fillerBytesCount]);
+    const filledBuffer = Buffer.concat([buffer, fillerBytes]);
     
     return filledBuffer.readInt32LE(0);
 };
